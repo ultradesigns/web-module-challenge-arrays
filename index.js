@@ -175,8 +175,17 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-    /*your code here*/
+function filterByWord(originalFlavors, "Chocalate"){
+    
+    let newOriginals=[];
+
+    for(i in originalFlavors){
+        if(originalFlavors[i].includes("chocolate")){
+            newOriginals.push(originalFlavors[i].includes("chocolate"));
+        }
+    }
+    
+    return newOriginals;
 }
 
 
@@ -198,7 +207,7 @@ function getAverageWordLength(/*code here*/){
 
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
-Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors 
+Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a totalof 31 flavors 
 from originalFlavors, currentFlavors, seasonalFlavors, and regionalFlavors and store it in an array called randomFlavors.
 
 Use the getRandomFlavors function and new arrays below to do the following:
@@ -216,7 +225,7 @@ function getRandomFlavors(/*code here*/){
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
 const newFlavors = [
-    "Date night",
+    "Date night", 
     "U.S.S Butterscotch (Stranger Things special)",
     "Honey Almond",
     "Mint Chocolate Chip",

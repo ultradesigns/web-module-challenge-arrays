@@ -175,19 +175,19 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(originalFlavors, "Chocalate"){
+function filterByWord(originalFlavors, filter){
     
-    let newOriginals=[];
+    
 
-    for(i in originalFlavors){
-        if(originalFlavors[i].includes("chocolate")){
-            newOriginals.push(originalFlavors[i].includes("chocolate"));
+    for(let i in originalFlavors){
+        if(originalFlavors[i].includes(filter)){
+            newOriginals.push(originalFlavors[i]);
         }
     }
-    
     return newOriginals;
 }
-
+let newOriginals=filterByWord(originalFlavors, "chocalate");
+console.log(newOriginals);
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 

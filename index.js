@@ -45,11 +45,13 @@ Use the copy function below to do the following:
     2. Return a copy of the received array  
 */
 
-function copy(/*your code here*/){
-    /*your code here*/
+function copy(newArray){
+    let projArray= [...newArray];
+    return projArray;
 }    
 
-
+copy(originalFlavors);
+console.log(copy(originalFlavors));
 
 
 
@@ -63,10 +65,15 @@ Confirm that an array is exactly 31 flavors. Your function should accept:
 For Example: is31Flavors(originalFlavors) will return true if your code is working properly
 */
 
-
-function is31Flavors(/*your code here*/){
-   /*your code here*/
+function is31Flavors(originalFlavors){
+    if(originalFlavors.length === 31){
+        return true;
+    } else{
+        return false;
+    }   
 }
+
+is31Flavors(originalFlavors);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -79,11 +86,14 @@ Use the addFlavor function below to do the following:
 
     For example: addFlavor("Rainbow Sherbert", originalFlavors) should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
+// var newFlav="Rainbow Sherbert"
 
-
-function addFlavor(/*your code here*/){
-   /*your code here*/
+function addFlavor(originalFlavors){
+   originalFlavors.unshift("Rainbow Sherbert");
+   return originalFlavors;
 }
+
+console.log(addFlavor( originalFlavors));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -97,8 +107,9 @@ Use the removeLastFlavor function below to do the following:
     For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
-   /*your code here*/
+function removeLastFlavor(originalFlavors){
+   originalFlavors.pop();
+   return originalFlavors;
 }
 
 
@@ -113,8 +124,10 @@ Use the getFlavorByIndex function below to do the following:
     For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-    /*your code here*/
+let index= 30;
+
+function getFlavorByIndex(originalFlavors, index){
+    return originalFlavors[index];
 }
 
 
@@ -132,9 +145,14 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-    /*your code here*/
+
+function removeFlavorByName(originalFlavors,test){
+    originalFlavors.splice(test);
+    return originalFlavors;
 }
+
+console.log(removeFlavorByName(originalFlavors, "Eggnog"));
+
 
 
 
@@ -157,10 +175,19 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-    /*your code here*/
-}
+function filterByWord(originalFlavors, filter){
+    
+    
 
+    for(let i in originalFlavors){
+        if(originalFlavors[i].includes(filter)){
+            newOriginals.push(originalFlavors[i]);
+        }
+    }
+    return newOriginals;
+}
+let newOriginals=filterByWord(originalFlavors, "chocalate");
+console.log(newOriginals);
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
@@ -180,7 +207,7 @@ function getAverageWordLength(/*code here*/){
 
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
-Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors 
+Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a totalof 31 flavors 
 from originalFlavors, currentFlavors, seasonalFlavors, and regionalFlavors and store it in an array called randomFlavors.
 
 Use the getRandomFlavors function and new arrays below to do the following:
@@ -198,7 +225,7 @@ function getRandomFlavors(/*code here*/){
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
 const newFlavors = [
-    "Date night",
+    "Date night", 
     "U.S.S Butterscotch (Stranger Things special)",
     "Honey Almond",
     "Mint Chocolate Chip",
